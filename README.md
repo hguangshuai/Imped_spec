@@ -1,6 +1,6 @@
-# Impedance analysis for EIS sample and Piezoelectric materials
+# Impedance and Admittance Calculations
 
-This repository focuses on various calculations related to **Impedance (Z)**, **Admittance (Y)**, **EIS fitting** (Electrochemical Impedance Spectroscopy), and **piezoelectric effects**(Electromechanical Impedance). The code implements key concepts in impedance analysis and provides tools for analyzing data, particularly in circuits and materials where such phenomena are observed.
+This repository focuses on various calculations related to **Impedance (Z)**, **Admittance (Y)**, **EIS fitting** (Electrochemical Impedance Spectroscopy), **piezoelectric effects**, and methods for **Structural Health Monitoring (SHM)** using piezoelectric materials. The code implements key concepts in impedance analysis and provides tools for analyzing data, particularly in circuits and materials where such phenomena are observed.
 
 ## Key Concepts
 
@@ -29,21 +29,21 @@ EIS is a powerful technique used to study the electrical properties of materials
 
 - **EIS Modeling**: EIS data can be modeled using an equivalent circuit that mimics the real electrochemical system. The most common elements in such circuits include resistors, capacitors, inductors, and constant phase elements (CPEs).
 
-- **EIS Fitting**: Fitting EIS data involves optimizing the parameters of an equivalent circuit model to best match the experimental impedance data across various frequencies. Tools such as ZView, and Python libraries like `scipy.optimize` are used for this purpose.
+### 3. Piezoelectric Effect and SHM (Structural Health Monitoring)
+The **piezoelectric effect** describes the phenomenon where certain materials generate an electric charge in response to applied mechanical stress. In the context of **Structural Health Monitoring (SHM)**, piezoelectric materials, especially using the **Electromechanical Impedance (EMI)** technique, can be employed to detect changes in structures by monitoring electrical responses under different conditions.
 
-- **Common Parameters**:
-  - **Solution Resistance (Rs)**: The resistance of the electrolyte solution.
-  - **Charge Transfer Resistance (Rct)**: The resistance associated with electrochemical reactions at the electrode-electrolyte interface.
-  - **Double Layer Capacitance (Cdl)**: The capacitance formed by the separation of charge at the electrode-electrolyte interface.
+#### SHM Analysis Techniques
+The following methods are commonly used to analyze the data obtained from EMI measurements using piezoelectric materials for SHM:
 
-### 3. Piezoelectric Effect
-The piezoelectric effect describes the phenomenon where certain materials generate an electric charge in response to applied mechanical stress. This property is commonly used in sensors, actuators, and energy harvesting systems.
+- **Statistical Analysis**: Statistical tools like mean, standard deviation, and RMSD (Root Mean Square Deviation) are used to detect anomalies in the structure by comparing the baseline impedance signatures with the current state. Statistical indices are useful for quantifying damage or changes in the system.
 
-- **Direct Piezoelectric Effect**: When mechanical stress is applied, the material generates a voltage.
-  
-- **Inverse Piezoelectric Effect**: When a voltage is applied, the material undergoes mechanical deformation.
+- **Filtering**: Filters such as low-pass, high-pass, and band-pass are applied to EMI signals to remove noise and enhance important features in the impedance data. This improves the clarity of peak detection and other signal characteristics.
 
-Piezoelectric materials are often characterized by their impedance and admittance, and their response to alternating electric fields is of particular interest in the study of resonance behavior and energy dissipation.
+- **Different Electrical Signal Analysis**: Analysis of different electrical signals (such as voltage, current, and phase) helps in characterizing the structure’s dynamic behavior. By studying how these signals vary with frequency, one can identify material degradation or structural damage.
+
+- **Peak Feature Analysis**: Peaks in impedance and admittance spectra are often related to the resonant behavior of the structure. By monitoring the shift in peak position, height, and width, one can infer changes in the mechanical properties of the structure. Peak feature analysis is a key tool for identifying damage in SHM applications.
+
+- **Wavelet Analysis**: Wavelet transforms provide a time-frequency representation of the signal, which is particularly useful in detecting transient events or localized damage in structures. Wavelet analysis allows for multi-resolution analysis of the EMI signals, capturing both high-frequency and low-frequency features effectively.
 
 ### 4. Conversion between Impedance and Admittance
 - **Conductance ($G$)**: 
@@ -75,7 +75,7 @@ Where:
 - $N$ is the total number of data points.
 
 ## Project Structure
-- **`Impedance_deb.ipynb`**: This Jupyter Notebook contains the core calculations for impedance, admittance, and EIS fitting. It also demonstrates the RMSD calculation for comparing experimental data with theoretical models.
+- **`Impedance_spec.ipynb`**: This Jupyter Notebook contains the core calculations for impedance, admittance, EIS fitting, and SHM analysis. It demonstrates statistical analysis, signal filtering, peak feature analysis, and wavelet analysis on EMI data.
   
 - **Data Files**: The repository may contain impedance data (e.g., CSV files) used for analysis.
 
