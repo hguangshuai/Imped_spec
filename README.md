@@ -1,6 +1,6 @@
-# Impedance and Admittance Calculations
+# Impedance analysis for EIS sample and Piezoelectric materials
 
-This repository focuses on various calculations related to **Impedance (Z)**, **Admittance (Y)**, **EIS fitting** (Electrochemical Impedance Spectroscopy), and **piezoelectric effects**. The code implements key concepts in impedance analysis and provides tools for analyzing data, particularly in circuits and materials where such phenomena are observed.
+This repository focuses on various calculations related to **Impedance (Z)**, **Admittance (Y)**, **EIS fitting** (Electrochemical Impedance Spectroscopy), and **piezoelectric effects**(Electromechanical Impedance). The code implements key concepts in impedance analysis and provides tools for analyzing data, particularly in circuits and materials where such phenomena are observed.
 
 ## Key Concepts
 
